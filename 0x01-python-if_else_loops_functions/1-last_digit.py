@@ -9,7 +9,7 @@ else:
 print(f"Last digit of {number:d} is {l_digit:d}", end=' ')
 
 if l_digit > 5:
-    print("and is greaterthan 5")
+    print("and is greater than 5")
 elif l_digit == 0:
     print("and is 0")
 else:
