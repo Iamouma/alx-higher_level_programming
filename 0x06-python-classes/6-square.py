@@ -1,37 +1,32 @@
 #!/usr/bin/python3
-"""
-class square has private instance size and public instance are
-if size is not an integer raise type error
-if size is less than 0 raise value error
-"""
+
+"""Define a class Square."""
 
 
 class Square:
-    """
-    takes in private instance size, private instance positions
-    and public instance area
-    """
+    """Represent a square."""
 
     def __init__(self, size=0, position=(0, 0)):
-        """define object size
-        define object postition"""
-        self.__size = size
+        """Initialize a new square.
+        Args:
+            size (int): The size of the new square.
+            position (int, int): The position of the new square.
+        """
+        self.size = size
         self.position = position
 
     @property
     def size(self):
-        """get access to private instance size
-        return square size"""
-        return self.__size
+        """Get/set the current size of the square."""
+        return (self.__size)
 
     @size.setter
     def size(self, value):
-        """Raise Typeerror if size is not integer
-        valueerror is size is less than 0"""
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        if value < 0:
+        elif value < 0:
             raise ValueError("size must be >= 0")
+        self.__size = value
 
     @property
     def position(self):
@@ -40,7 +35,6 @@ class Square:
 
     @position.setter
     def position(self, value):
-        """check if position is a tuple of two positive integers"""
         if (not isinstance(value, tuple) or
                 len(value) != 2 or
                 not all(isinstance(num, int) for num in value) or
@@ -49,20 +43,17 @@ class Square:
         self.__position = value
 
     def area(self):
-        """public instace attribute area.
-        returns the value of the area of the square"""
-        return (self.__size ** 2)
+        """Return the current area of the square."""
+        return (self.__size * self.__size)
 
     def my_print(self):
-        """print to stdout the square to the character #"""
+        """Print the square with the # character."""
         if self.__size == 0:
-            print()
+            print("")
             return
-        for y in range(0, self.__position[1]):
-            print()
+
+        [print("") for i in range(0, self.__position[1])]
         for i in range(0, self.__size):
-            for x in range(0, self.__position[0]):
-                print(" ", end="")
-            for j in range(0, self.__size):
-                print("#", end="")
-            print()
+            [print(" ", end="") for j in range(0, self.__position[0])]
+            [print("#", end="") for k in range(0, self.__size)]
+            print("")
