@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-"""Create Node class."""
+
+"""Define classes for a singly-linked list."""
 
 
 class Node:
-    """Defining Node linked list."""
+    """Represent a node in a singly-linked list."""
 
     def __init__(self, data, next_node=None):
         """Initialize a new Node.
