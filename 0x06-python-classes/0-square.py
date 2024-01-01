@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/binpython3
 """ Defines a class Square """
 
 
