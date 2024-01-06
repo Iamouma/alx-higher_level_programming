@@ -1,0 +1,33 @@
+Import function
+>>> text_identation = __import __("5-text_identation").text_identation
+
+prints a text replacing ',', '?' and ':' with two new lines
+
+>>> text_identation("""I want to jump:Just do it""")
+I want to jump:
+<BLANKLINE>
+Just do it
+
+one string
+===========
+>>> text_identation("""Ouma?""")
+Ouma?
+<BLANKLINE>
+
+whether text is string
+======================
+text_identation(80)
+Traceback (most recent call last):
+       ...
+TypeError: text must be a string
+
+no space is printed at the start of a new line or at the end
+============================================================
+>>> text_identation(""" Just do it?""")
+Just do it?
+<BLANKLINE>
+
+>>> text_identation("""Hi. """)
+Hi.
+<BLANKLINE>
+<BLANKLINE>
