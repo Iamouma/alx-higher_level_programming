@@ -15,9 +15,11 @@ class Student:
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
+    
     def to_json(self, attrs=None):
         """This gets a dictionary representation of the Student.
-        if attrs isa list of strings, it represents only those attributes included in the list.
+        If attrs is a list of strings, it represents only those attributes 
+        included in the list.
         Args:
             attrs (list): (Optional) This is the attributes to represent.
         """
