@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""this module has the function add_integer"""
+"""this module has the addition function add_integer"""
 
 
 def add_integer(a, b=98):
