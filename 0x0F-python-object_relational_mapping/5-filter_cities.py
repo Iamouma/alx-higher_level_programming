@@ -27,8 +27,7 @@ if __name__ == "__main__":
 
     print(", ".join([city[2]
                      for city in cur.fetchall()
-                     if city[4] == argv[4]])
-         )
+                     if city[4] == argv[4]]))
 
     cur.close()
     db.close()
