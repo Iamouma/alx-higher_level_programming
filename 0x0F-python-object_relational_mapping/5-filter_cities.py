@@ -1,18 +1,34 @@
 #!/usr/bin/python3
 """
-Displays all cities of a given state from the states table of
-database hbtn_0e_4_usa. Safe from SQL injections.
-The script takes 4 command line arguments <mysql username> <mysql password>
-<databse name> and <state name searched>.
+Lists all cities of the state using the databse hbtn_0e_4_usa.
+Take in 4 command line arguments mysql username, mysql password,
+database name and state name (SQL injection free!)
 """
-import sys
+from sys import argv
 import MySQLdb
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+    db = MySQLdb.connect(
+            host='localhost',
+            user=argv[1],
+            passwd=argv[2],
+            db=argv[3],
+            port=3306
+    )
+
     cur = db.cursor()
-    cur.execute("SELECT * FROM `cities` as `c` \
-                    INNER JOIN `states` as `s` \
-                    ON `c`.`state_id` = `s`.`id` \
-                    ORDER BY `c`.`id`")
-    print(", ".join([ct[2] for ct in cur.fetchall() if ct[4] == sys.argv[4]]))
+
+    cur.execute(
+            """SELECT * FROM cities
+            INNER JOIN states
+            ON cities.state_id = states.id
+            ORDER BY cities.id"""
+    )
+
+    print(", ".join([city[2]
+                     for city in cur.fetchall()
+                     if city[4] == argv[4]])
+         )
+
+    cur.close()
+    db.close()
