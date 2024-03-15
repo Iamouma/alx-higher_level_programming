@@ -6,7 +6,7 @@ The script takes 3 command line arguments <mysql username>
 """
 import sys
 from sqlalchemy import create_engine
-from sqlalchemy import sessionmaker
+from sqlalchemy.orm import sessionmaker
 from model_state import State
 
 if __name__ == "__main__":
