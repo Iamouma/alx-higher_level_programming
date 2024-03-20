@@ -1,4 +1,4 @@
-#!/usr//bin/python3
+#!/usr/bin/python3
 """
 Define a City model.
 Inherits from SQLAlchemy Base and links to the MySQL table cities.
