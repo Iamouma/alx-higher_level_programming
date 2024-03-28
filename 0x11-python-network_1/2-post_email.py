@@ -1,16 +1,16 @@
 #!/usr/bin/python3
+"""This script uses urllib to send a POST request"""
 
 import sys
 from urllib import request
 from urllib import parse
 
+
 if __name__ == "__main__":
     url = sys.argv[1]
-    email = sys.argv[2]
+    value = {"email": sys.argv[2]}
+    data = urllib.parse.urlencode(value).encode("ascii")
 
-    data = {"email": email}
-
-    data_encode = parse.urlencode(data).encode("ascii")
-
-    with request.urlopen(url, data=data_encode) as response:
+    request = urllib.request.Request(url, data)
+    with urllib.request.urlopen(request) as response:
         print(response.read().decode("utf-8"))
