@@ -2,17 +2,17 @@
 
 const request = require('request');
 
-const apiUrl = procees.argv[2];
+const apiUrl = process.argv[2];
 
 request(apiUrl, function (error, response, body) {
   if (!error) {
     const results = JSON.parse(body).results;
 
     const moviesWithWedge = results.reduce((count, movie) => {
-      return movie.characters.find((characters) => character.endsWith('/18/'))
+      return movie.characters.find((character) => character.endsWith('/18/'))
         ? count + 1
         : count;
     }, 0);
-    console.log(moviesWithWegde);
+    console.log(moviesWithWedge);
   }
 });
