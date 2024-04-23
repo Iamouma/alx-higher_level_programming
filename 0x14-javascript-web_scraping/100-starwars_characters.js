@@ -2,16 +2,23 @@
 
 const request = require('request');
 
-const url = 'https://swapi.dev/api/films/' + process.argv[2];
+const url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
+
+const log = console.log;
+
 request(url, function (error, response, body) {
-  if (!error) {
+  if (error) {
+    log(error);
+  } else {
     const characters = JSON.parse(body).characters;
-    characters.forEach((character) => {
+    for (const character of characters) {
       request(character, function (error, response, body) {
-        if (!error) {
-          console.log(JSON.parse(body).name);
+        if (error) {
+          log(error);
+        } else {
+          log(JSON.parse(body).name);
         }
       });
-    });
+    }
   }
 });
