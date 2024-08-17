@@ -1,4 +1,4 @@
-A hign-level programming language is a language that is considered to be easy for humans to understand and write. These languages ate more abstracted from the machine, allowing programmers to write code that is closer to human language.
+A high-level programming language is a language that is considered to be easy for humans to understand and write. These languages ate more abstracted from the machine, allowing programmers to write code that is closer to human language.
 
 High-level languages often have features like inbuilt functions, advanced data structures, and are more portable across different computer achitectures. Examples of high-level programming languages include Python, Java, C++, and JavaScript.
 
